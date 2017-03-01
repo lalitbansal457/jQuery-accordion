@@ -1,0 +1,106 @@
+<html>
+<head>
+	<title>Accordion</title>
+	<style>
+		.accordion {
+			max-width: 600px;
+			margin: auto;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			border: 1px solid #000;
+		}
+		ul span {
+			background: #ccc;
+			display: block;
+			padding: 5px 10px;
+			cursor: pointer;
+			border-bottom: 1px solid #000;
+		}
+		.accordion-content {
+			padding: 10px;
+			display: none;
+		}
+		li {
+			position: relative;
+		}
+		span span {
+			float: right;
+			display: inline-block;
+			padding: 0;
+			border: 0;
+			
+		}
+		span span:after {
+			position: absolute;
+			right: 10px;
+			content: ">";
+		}
+		.active span span:after {
+			content: "<";
+
+		}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".accordion-menu li span").click(function(){
+				$(this).parent("li").toggleClass("active").find(".accordion-content").slideToggle().parent("li").siblings().removeClass("active").find(".accordion-content").slideUp();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="accordion">
+		<ul class="accordion-menu">
+			<li>
+				<span>One  <span class="down">  </span></span>
+				<div class="accordion-content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</li>
+			<li>
+				<span>Two<span class="down">  </span></span>
+				<div class="accordion-content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</li>
+			<li>
+				<span>Three<span class="down"> </span></span>
+				<div class="accordion-content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</li>
+			<li>
+				<span>Four<span class="down">  </span></span>
+				<div class="accordion-content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
